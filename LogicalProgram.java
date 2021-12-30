@@ -26,6 +26,7 @@ public class LogicalProgram {
 		}
 		LogicalProgram obj=new LogicalProgram();
 		obj.primeNumber();
+		obj.perfectNumber();
 	}
 	
 	public void primeNumber() {
@@ -48,6 +49,22 @@ public class LogicalProgram {
 		}
 		if(Flag==0) {
 			System.out.println(Number+" "+ "is Prime Number");
+		}
+	}
+	
+	public void perfectNumber() {
+		int sumOfDivisor=0;
+		System.out.print("Please Enter a Number To Check Perfect Or Not:");
+		Number=sc.nextInt();
+		for(int i=1; i<Number; i++) {
+			if(Number%i == 0) {
+				sumOfDivisor=sumOfDivisor+i;
+			}
+		}
+		if(sumOfDivisor == Number) {
+			System.out.println(Number +" " +"is Perfect Number");
+		}else {
+			System.out.println(Number +" "+ "is not Perfect Number");
 		}
 	}
 }
