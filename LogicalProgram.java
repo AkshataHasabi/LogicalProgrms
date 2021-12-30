@@ -1,5 +1,6 @@
 package com.bridgelab.logicalprograms;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LogicalProgram {
@@ -28,6 +29,7 @@ public class LogicalProgram {
 		obj.primeNumber();
 		obj.perfectNumber();
 		obj.reverseNumber();
+		obj.couponCode();
 	}
 	
 	public void primeNumber() {
@@ -79,5 +81,29 @@ public class LogicalProgram {
 			Number=Number/10;
 		}
 		System.out.println("The reverse of the given number is:"+reverse);
+	}
+	
+	public void couponCode() {
+		int numberOfCoupons;
+		System.out.print("How Many Coupons You Want:");
+		numberOfCoupons=sc.nextInt();
+		int [] couponsCodes=new int[numberOfCoupons];
+		int countOfCoupons=0;
+		System.out.print("Enter a Random Number:");
+		Number=sc.nextInt();
+		while(countOfCoupons < numberOfCoupons) {
+			int randomCoupons = (int) Math.floor(Math.random()*Number);
+			boolean couponInCouponsCode=false;
+			for(int i=0; i<couponsCodes.length; i++)
+			{
+				if(randomCoupons == couponsCodes[i]) {
+					couponInCouponsCode=true;
+				}
+			}
+			if(!(couponInCouponsCode)) {
+				couponsCodes[countOfCoupons++]=randomCoupons;
+			}
+		}
+		System.out.println("These are"+ numberOfCoupons+"coupons you want:"+Arrays.toString(couponsCodes));	
 	}
 }
