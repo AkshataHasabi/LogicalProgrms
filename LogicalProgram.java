@@ -30,6 +30,7 @@ public class LogicalProgram {
 		obj.perfectNumber();
 		obj.reverseNumber();
 		obj.couponCode();
+		obj.stopWatchElapseTime();
 	}
 	
 	public void primeNumber() {
@@ -106,4 +107,18 @@ public class LogicalProgram {
 		}
 		System.out.println("These are"+ numberOfCoupons+"coupons you want:"+Arrays.toString(couponsCodes));	
 	}
+	
+	public void stopWatchElapseTime() {
+		double startTime, stopTime;
+		System.out.print("Enter 1 To Start");
+		sc.nextInt();
+		startTime = System.currentTimeMillis();
+		System.out.println("started at"+ startTime);
+		System.out.println("Enter 2 To Stop");
+		sc.nextInt();
+		stopTime = System.currentTimeMillis();
+		System.out.println("stopped at"+ stopTime);
+		double timeElapsed =(stopTime-startTime)/1000;
+		System.out.println("Total time elapsed in milliseconds:"+ timeElapsed);
+		}
 }
