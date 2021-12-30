@@ -27,6 +27,7 @@ public class LogicalProgram {
 		LogicalProgram obj=new LogicalProgram();
 		obj.primeNumber();
 		obj.perfectNumber();
+		obj.reverseNumber();
 	}
 	
 	public void primeNumber() {
@@ -66,5 +67,17 @@ public class LogicalProgram {
 		}else {
 			System.out.println(Number +" "+ "is not Perfect Number");
 		}
+	}
+	
+	public void reverseNumber() {
+		System.out.println("Enter The Number To Reverse");
+		Number=sc.nextInt();
+		int reverse=0;
+		while(Number>0) {
+			int remainder=Number%10;
+			reverse=reverse*10+remainder;
+			Number=Number/10;
+		}
+		System.out.println("The reverse of the given number is:"+reverse);
 	}
 }
